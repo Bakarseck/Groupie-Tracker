@@ -8,7 +8,7 @@ import (
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-
+	
 }
 
 func render(w http.ResponseWriter, tmpl string, value interface{}) {
@@ -29,7 +29,9 @@ func TemplateCache()(map[string]*template.Template, error) {
 			log.Fatal("layout not found")
 		}
 		if len(layout)>0{
-			tmpl.ParseGlob
+			tmpl.ParseGlob("/templates/layout/*.tmpl")
 		}
+		cache[name]=tmpl
 	}
+	return cache,nil
 }
