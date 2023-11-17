@@ -22,6 +22,7 @@ func TemplateCache()(map[string]*template.Template, error) {
 		log.Fatal("page not found")
 	}
 	for page := range pages {
-		
+		name := filepath.Base(page)
+		tmpl := template.Must(template.Parsefiles(page)
 	}
 }
