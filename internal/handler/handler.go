@@ -6,7 +6,9 @@ import (
 	"net/http"
 	"path/filepath"
 )
-type 
+type value struct {
+	
+}
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
