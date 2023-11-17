@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"path/filepath"
 )
+type 
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
@@ -21,8 +22,9 @@ func render(w http.ResponseWriter, str string, value interface{}) {
 	if !ok{
 		http.Error(w,"Template not found", http.StatusInternalServerError)
 	}
-	var buff Buffer
-	buff.WriteString(w)
+	buff := new(bytes.Buffer)
+	tmpl.ExecuteTemplate(buff, value)
+	buff.WriteTo(w)
 
 }
 
