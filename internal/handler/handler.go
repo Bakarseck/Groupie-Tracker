@@ -17,7 +17,10 @@ func render(w http.ResponseWriter, str string, value interface{}) {
 		panic(err)
 	}
 
-	template := tmpl[str+".tmpl"]
+	template, ok := tmpl[str+".tmpl"]
+	if !ok{
+		http.Error(w,"Template not found", http.StatusInternalServerError)
+	}
 	var buff Buffer
 	buff.WriteString(w)
 
