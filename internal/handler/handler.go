@@ -16,6 +16,8 @@ func render(w http.ResponseWriter, str string, value interface{}) {
 	if err != nil {
 		panic(err)
 	}
+
+	template := tmpl[str+".tmpl"]
 	var buff Buffer
 	buff.WriteString(w)
 
