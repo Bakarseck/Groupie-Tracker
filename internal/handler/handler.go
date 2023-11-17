@@ -13,7 +13,11 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 func render(w http.ResponseWriter, str string, value interface{}) {
 	tmpl , err := TemplateCache(str)
-	var 
+	if err != nil {
+		panic(err)
+	}
+	var buff Buffer
+	buff.WriteString(w)
 
 }
 
