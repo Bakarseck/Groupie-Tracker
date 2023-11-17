@@ -26,7 +26,10 @@ func TemplateCache()(map[string]*template.Template, error) {
 		tmpl := template.Must(template.Parsefiles(page))
 		layout, err := filepath.Glob("/templates/layout/*.tmpl")
 		if err != nil {
-			
+			log.Fatal("layout not found")
+		}
+		if len(layout)>0{
+			tmpl.ParseGlob
 		}
 	}
 }
