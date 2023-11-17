@@ -1,4 +1,4 @@
-{{base}}
+{{define "base"}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" href="/asset/css/style.css">
-    link
+    <link rel="stylesheet" href="/asset/js/scripte.js">
     <title>Document</title>
 </head>
 <body>
-    {{start}}
+    {{block "content" .}}
     {{end}}
 </body>
 </html>
+{{end}}
